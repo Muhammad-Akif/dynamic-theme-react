@@ -1,7 +1,20 @@
+import { useState } from 'react'
 import img from './image/kitten.jpg';
 import './App.css';
 
 function App() {
+  const [btnColor, setBtnColor] = useState('')
+  const [toggler, setToggler] = useState(false)
+  const [themeToggler, setThemeToggler] = useState(false)
+
+  const colors = ['#2980b9', '#27ae60', '#ffa502', '#8e44ad', '#0fb9b1', '#ffd32a', '#ff0033', '#e84393']
+  document.querySelector(':root').style.setProperty('--main-color', btnColor);
+  if( toggler ) {
+    document.body.style.paddingRight = '350px'
+  }
+  else{
+    document.body.style.paddingRight = '0px'
+  }
 
   return (
     <>
